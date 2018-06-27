@@ -1,0 +1,14 @@
+{
+    "PAGES": {
+        "APP": {
+            "TITLE": "Mon App",
+            "VIEW": "Vue",
+            "EDIT": "Modify",
+            "FOOTER": "droits d'auteur (c) 2018"
+        },
+        "USERS": {
+            "NAME": "prenom",
+            "EMAIL": "email"
+        }
+    }
+}
