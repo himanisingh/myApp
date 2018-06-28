@@ -1,16 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<header></header>
 <header>
     <h1>
         {{ 'PAGES.APP.TITLE' | translate }}
     </h1>
-    <div>
-        <a (click)="translatePage('en')">EN</a> |
-        <a (click)="translatePage('fr')">FR</a>
+    <div class="translate-links">
+        <a href="javascript:void(0);" (click)="translatePage('en')" [class.active]="activeLanguage==='en'">EN</a> |
+        <a href="javascript:void(0);" (click)="translatePage('fr')" [class.active]="activeLanguage==='fr'">FR</a>
     </div>
     <nav>
-        <a [routerLink]="['/view/']">{{ 'PAGES.APP.VIEW' | translate }}</a> |
-        <a [routerLink]="['/edit/']">{{ 'PAGES.APP.EDIT' | translate }}</a>
+        <div class=" navbar-links ">
+            <a [routerLink]="[ '/view/'] " routerLinkActive="active ">{{ 'PAGES.APP.VIEW' | translate }}</a> |
+            <a [routerLink]="[ '/edit/'] " routerLinkActive="active ">{{ 'PAGES.APP.EDIT' | translate }}</a>
+        </div>
     </nav>
 </header>
 <article>
@@ -19,5 +20,5 @@
     </section>
 </article>
 <footer>
-    <p>{{ 'PAGES.APP.FOOTER' | translate }}</p>
+    <div>{{ 'PAGES.APP.FOOTER' | translate }}</div>
 </footer>

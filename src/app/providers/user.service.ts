@@ -4,20 +4,20 @@ import { User } from '../user';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class UserService {
-
   url;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {}
 
-   public getUser(): Observable<User> {
+  public getUser(): Observable<User> {
     this.url = '../assets/user.json';
     return this.http
       .get(this.url)
       .map(res => res.json())
-      .catch(this.handleError);
+      .catch(error => Observable.throw('Server error'));
   }
 
   public updateUser(user: User): Observable<User> {
@@ -25,12 +25,6 @@ export class UserService {
     return this.http
       .put(this.url, user)
       .map(res => res.json())
-      .catch(this.handleError);
+      .catch(error => Observable.throw('Server error'));
   }
-
-  private handleError (error: Response | any) {
-    console.error('UserService::handleError', error);
-    return Observable.throw(error);
-  }
-
 }

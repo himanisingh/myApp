@@ -1,0 +1,40 @@
+@import 'styles/variables.scss';
+
+header {
+  border: 1px solid $border-color;
+  margin: 15px;
+  h1,
+  .translate-links {
+    padding: 10px;
+  }
+  nav {
+    border-top: 1px solid $border-color;
+  }
+  .translate-links,
+  .navbar-links {
+    padding: 10px;
+    a {
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
+}
+article {
+  position: relative;
+  margin: 15px;
+  section {
+    position: relative;
+  }
+}
+footer {
+  border: 1px solid $border-color;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 15px;
+  div {
+    padding: 10px;
+  }
+}

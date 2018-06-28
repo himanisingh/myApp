@@ -3,16 +3,26 @@
         <span class="badge">{{user.id}}</span> {{user.name}}
     </li>
 </ul> -->
-<div *ngIf="!editMode">
-    <div><span>{{ 'PAGES.USERS.NAME' | translate }}: </span>{{user.name}}</div>
-    <div><span>{{ 'PAGES.USERS.EMAIL' | translate }}: </span>{{user.email}}</div>
+<div *ngIf="!editMode" class="container view">
+    <div class="attribute">
+        <span class="attribute-label">{{ 'PAGES.USERS.NAME' | translate }}: </span>
+        <span class="attribute-value">{{user.name}}</span>
+    </div>
+    <div class="attribute">
+        <span class="attribute-label">{{ 'PAGES.USERS.EMAIL' | translate }}: </span>
+        <span class="attribute-value">{{user.email}}</span>
+    </div>
 </div>
-<div *ngIf="editMode">
-    <div><span>{{ 'PAGES.USERS.NAME' | translate }}: </span>
-        <input type="text" name="name" placeholder="name" [(ngModel)]="user.name">
+<div *ngIf="editMode" class="container edit">
+    <div class="attribute">
+        <span class="attribute-label">{{ 'PAGES.USERS.NAME' | translate }}: </span>
+        <input type="text" name="name" placeholder="name" [(ngModel)]="user.name" class="attribute-value">
     </div>
-    <div><span>{{ 'PAGES.USERS.EMAIL' | translate }}: </span>
-        <input type="text" name="email" placeholder="email" [(ngModel)]="user.email">
+    <div class="attribute">
+        <span class="attribute-label">{{ 'PAGES.USERS.EMAIL' | translate }}: </span>
+        <input type="text" name="email" placeholder="email" [(ngModel)]="user.email" class="attribute-value">
     </div>
-    <button type="submit" (click)="save()">Save</button>
+    <div class="btn-container">
+        <button type="submit" (click)="save()">Save</button>
+    </div>
 </div>
